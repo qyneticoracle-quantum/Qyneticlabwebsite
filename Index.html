@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Qynetic Labs Oy: The world's first production quantum-augmented financial oracle. Delivering real quantum advantage for DeFi and institutional finance.">
+    <meta name="keywords" content="quantum finance, quantum oracle, quantum DeFi, quantum computing finance, quantum advantage alpha">
+    <title>Qynetic Labs Oy | The Bloomberg Terminal of the Quantum Era</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0A1A2F;
+            --accent-cyan: #00D4FF;
+            --accent-teal: #00E8C6;
+            --text-primary: #FFFFFF;
+            --text-secondary: #B0B0B0;
+        }
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 26, 47, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+        nav a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--accent-cyan);
+        }
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #hero {
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: linear-gradient(to bottom, #0A1A2F, #0F2A47);
+            position: relative;
+            overflow: hidden;
+        }
+        #hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://www.shutterstock.com/image-vector/dark-abstract-blue-background-subtle-600nw-2656076379.jpg') repeat;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        .monogram {
+            width: 150px;
+            height: 150px;
+            border: 3px solid var(--accent-cyan);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            background: rgba(0, 212, 255, 0.05);
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin: 1rem 0;
+        }
+        .tagline {
+            font-size: 1.8rem;
+            color: var(--accent-teal);
+            margin-bottom: 1.5rem;
+        }
+        .description {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        .btn-primary {
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+        }
+        .btn-primary:hover {
+            background: #00B8E6;
+            transform: translateY(-3px);
+        }
+        .btn-secondary {
+            border: 2px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+        }
+        .btn-secondary:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-primary);
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        .card h3 {
+            color: var(--accent-teal);
+        }
+        .diagram img, .demo img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .team-member {
+            text-align: center;
+        }
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-cyan);
+        }
+        .roadmap {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .milestone {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .milestone::before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: var(--accent-cyan);
+            border-radius: 50%;
+        }
+        footer {
+            background: #051020;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .social-links a {
+            color: var(--accent-cyan);
+            margin: 0 1rem;
+            font-size: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 1.5rem; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">Qynetic Labs</div>
+            <ul>
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#whitepaper">Whitepaper</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="monogram">QYN</div>
+        <p class="tagline">The Bloomberg Terminal of the Quantum Era</p>
+        <h1>We turn real quantum advantage into measurable alpha for DeFi and institutions.<br>No hype. Just code, qubits, and money.</h1>
+        <div class="cta-buttons">
+            <a href="whitepaper.pdf" class="btn btn-primary" id="whitepaper">Read Whitepaper</a>
+            <a href="#waitlist" class="btn btn-secondary">Join Waitlist</a>
+        </div>
+    </section>
+
+    <section id="problem">
+        <h2 style="text-align:center;">Classical finance infrastructure is hitting its limits in 2027–2030</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Portfolio Optimization</h3>
+                <p>Exponential complexity growth outpaces classical solvers in high-dimensional asset universes.</p>
+            </div>
+            <div class="card">
+                <h3>Risk Calculation</h3>
+                <p>Monte Carlo and VaR approximations fail to capture tail risks in correlated volatile markets.</p>
+            </div>
+            <div class="card">
+                <h3>Collateral & Execution</h3>
+                <p>Real-time optimal liquidation and collateral allocation remain computationally intractable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="solution">
+        <h2 style="text-align:center;">Qynetic Oracle</h2>
+        <p style="text-align:center;max-width:800px;margin:2rem auto;color:var(--text-secondary);">A production-grade, cryptographically verifiable oracle delivering quantum-computed results to on-chain and institutional systems.</p>
+        <div class="diagram">
+            <img src="https://docs.oracle.com/en/solutions/deploy-oracle-api-gateway-hybrid/img/api-gateway-hybrid.png" alt="Qynetic Oracle Architecture: Consumer → Gateway → Quantum Hardware → Signed Result">
+        </div>
+    </section>
+
+    <section id="demo">
+        <h2 style="text-align:center;">Live Demo</h2>
+        <p style="text-align:center;color:var(--text-secondary);">QAOA portfolio optimizer outperforming classical baselines on real asset data.</p>
+        <div class="demo">
+            <img src="https://media.springernature.com/m685/springer-static/image/art%3A10.1038%2Fs41534-025-01082-1/MediaObjects/41534_2025_1082_Fig1_HTML.png" alt="QAOA Portfolio Optimization Results Demonstrating Quantum Advantage">
+        </div>
+    </section>
+
+    <section id="finland">
+        <h2 style="text-align:center;">Why Finland</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Regulatory Clarity</h3>
+                <p>EU MiCA framework provides clear licensing paths for crypto-asset services.</p>
+            </div>
+            <div class="card">
+                <h3>Talent Hub</h3>
+                <p>Helsinki concentrates leading DeFi engineers and quantum researchers.</p>
+            </div>
+            <div class="card">
+                <h3>Institutional Support</h3>
+                <p>Business Finland funding and R&D incentives for deep-tech innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <h2 style="text-align:center;">Roadmap</h2>
+        <div class="roadmap">
+            <div class="milestone"><strong>Q1 2026</strong> – Private Alpha with select institutional partners</div>
+            <div class="milestone"><strong>Q4 2026</strong> – Public Testnet and SDK release</div>
+            <div class="milestone"><strong>Q1 2027</strong> – Mainnet launch with verifiable quantum computations</div>
+            <div class="milestone"><strong>2030</strong> – Qynetic Layer: Full quantum-accelerated settlement network</div>
+        </div>
+    </section>
+
+    <section id="team">
+        <h2 style="text-align:center;">Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="https://www.shutterstock.com/image-photo/happy-mid-aged-older-business-600nw-2322385015.jpg" alt="CEO Placeholder">
+                <h3>Dr. Alex Korhonen</h3>
+                <p>CEO & Founder<br>Former Head of Quant Research at a Tier-1 HF; PhD Quantum Information</p>
+            </div>
+            <div class="team-member">
+                <img src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXeF23i-naOUv2gOMXyfV6OZtmC2oOE2pe8AyGTzW36NavU4UjxRjaSV1hQOkJjQcP8zCbTnzeqkX-RFQz-jD4NXHlikIOvq-D2hisB3TkeLuSF14n37OUWHVOxHo2uEakOUi2jncA?key=Hi7fiY9mTx6szR4LK3ItBQ" alt="CTO Placeholder">
+                <h3>Maria Virtanen</h3>
+                <p>CTO<br>Ex-Chainlink Labs; Specialist in oracle security and zero-knowledge proofs</p>
+            </div>
+            <div class="team-member">
+                <img src="https://www.shutterstock.com/image-photo/close-headshot-portrait-happy-middle-260nw-2423464835.jpg" alt="Head of Quantum Placeholder">
+                <h3>Prof. Jussi Lahti</h3>
+                <p>Head of Quantum<br>Leading QAOA researcher; Advisor to IQM and VTT quantum programs</p>
+            </div>
+            <div class="team-member">
+                <img src="https://www.shutterstock.com/image-photo/headshot-portrait-happy-middle-aged-260nw-2600790503.jpg" alt="Head of Engineering Placeholder">
+                <h3>Sofia Mäkinen</h3>
+                <p>Head of Engineering<br>Former core contributor to Aave and Uniswap v3</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="monogram" style="width:80px;height:80px;font-size:2rem;margin:0 auto 1rem;">QYN</div>
+        <p>Helsinki, Finland © 2025 Qynetic Labs Oy</p>
+        <div class="social-links">
+            <a href="#">𝕏</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+        </div>
+        <p style="margin-top:2rem;color:var(--text-secondary);">contact@qyneticlabs.com</p>
+    </footer>
+
+</body>
+          </html>
